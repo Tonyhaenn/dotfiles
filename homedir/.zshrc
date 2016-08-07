@@ -50,4 +50,4 @@ load-nvmrc
 unsetopt correct
 
 # run fortune on new terminal :)
-fortune
+#fortune
