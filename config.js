@@ -40,8 +40,7 @@ module.exports = {
     //'watch',
     // Install wget with IRI support
     'wget --enable-iri',
-    //Additional packags
-    'autojump',
+    // Additional packages
     'docker',
     'docker-compose',
     'docker-machine',
