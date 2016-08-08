@@ -84,6 +84,7 @@ module.exports = {
     //'trash',
     //'vtop',
     'webpack',
-    'typescript'
+    'typescript',
+    'typings'
   ]
 };
