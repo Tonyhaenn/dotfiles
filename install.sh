@@ -535,7 +535,7 @@ defaults write com.apple.finder NewWindowTarget -string "PfDe"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/";ok
 
 running "Show hidden files by default"
-defaults write com.apple.finder AppleShowAllFiles -bool true;ok
+defaults write com.apple.finder AppleShowAllFiles -bool false;ok
 
 running "Show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true;ok
@@ -641,10 +641,10 @@ defaults write com.apple.dock dashboard-in-overlay -bool true;ok
 running "Don’t automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false;ok
 
-running "Remove the auto-hiding Dock delay"
-defaults write com.apple.dock autohide-delay -float 0;ok
+running "Set the auto-hiding Dock delay to 0.1"
+defaults write com.apple.dock autohide-delay -float 0.1;ok
 running "Remove the animation when hiding/showing the Dock"
-defaults write com.apple.dock autohide-time-modifier -float 0;ok
+defaults write com.apple.dock autohide-time-modifier -float 0.5;ok
 
 running "Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true;ok
