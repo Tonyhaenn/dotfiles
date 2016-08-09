@@ -91,13 +91,13 @@ setup_path() {
   add_path "${HOME}/shared_node.js/node/bin"
 
   # For per-project python virtualenvs
-  add_path "${PWD}/python/bin"
-  add_path "${PWD}/env/bin"
+  #add_path "${PWD}/python/bin"
+  #add_path "${PWD}/env/bin"
 
-  add_path "${HOME}/.rbenv/bin"
+  #add_path "${HOME}/.rbenv/bin"
 
   export PATH
-  [[ -d "${HOME}/.rbenv/bin" ]] && eval "$(rbenv init -)"
+  #[[ -d "${HOME}/.rbenv/bin" ]] && eval "$(rbenv init -)"
 }
 # Run this during shell startup.
 # Can be re-run as needed manually as well
