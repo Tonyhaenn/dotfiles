@@ -74,17 +74,14 @@ module.exports = {
   npm: [
     //'antic',
     //'buzzphrase',
-    'eslint',
+    //'eslint',
     //'instant-markdown-d',
     'npm-check',
     'yo',
     'generator-dockerize',
-    'gulp',
+    //'gulp',
     'prettyjson',
     //'trash',
-    //'vtop',
-    'webpack',
-    'typescript',
-    'typings'
+    //'vtop'
   ]
 };
