@@ -245,8 +245,9 @@ fi
 # node version manager
 require_brew nvm
 
-# nvm
-require_nvm 4.4.7
+# nvm latest node
+#require_nvm 4.4.7
+require_nvm node
 
 # always pin versions (no surprises, consistent dev/build machines)
 npm config set save-exact true
