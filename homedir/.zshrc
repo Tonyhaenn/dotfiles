@@ -53,7 +53,7 @@ unsetopt correct
 # http://peterlyons.com/problog/2012/09/managing-per-project-interpreters-and-the-path
 #This helper function will add a directory to the PATH if it exists
 #This is a simple way to handle different machines, OSes, and configurations
-addPath() {
+add_path() {
     if [ -d "${1}" ]; then
         if [ -z "${PATH}" ]; then
             export PATH="${1}"
