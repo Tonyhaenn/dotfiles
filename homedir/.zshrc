@@ -103,3 +103,12 @@ setup_path() {
 # Can be re-run as needed manually as well
 setup_path
 ###
+
+if [ -n "${ZSH_VERSION}" ]; then
+  chpwd() {
+    [ -d .git -o \
+      -d  node_modules/.bin -o \
+      -d python/bin -o \
+      -d node/bin ] && setup_path
+  }
+fi
