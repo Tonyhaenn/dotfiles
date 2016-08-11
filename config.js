@@ -78,7 +78,6 @@ module.exports = {
     //'instant-markdown-d',
     'npm-check',
     'yo',
-    'generator-dockerize',
     //'gulp',
     'prettyjson',
     //'trash',
