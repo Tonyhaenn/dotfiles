@@ -81,6 +81,7 @@ module.exports = {
     //'gulp',
     'prettyjson',
     //'trash',
-    //'vtop'
+    //'vtop',
+    'typings'
   ]
 };
