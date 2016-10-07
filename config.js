@@ -53,7 +53,7 @@ module.exports = {
     //'box-sync',
     //'comicbooklover',
     //'diffmerge',
-    //'dropbox',
+    'dropbox',
     //'evernote',
     'gpgtools',
     //'ireadfast',
