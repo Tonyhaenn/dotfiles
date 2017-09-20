@@ -113,3 +113,11 @@ if [ -n "${ZSH_VERSION}" ]; then
       -d node/bin ] && setup_path
   }
 fi
+
+##
+unsetDM() {
+  unset DOCKER_TLS_VERIFY
+  unset DOCKER_HOST
+  unset DOCKER_CERT_PATH
+  unset DOCKER_MACHINE_NAME
+}
