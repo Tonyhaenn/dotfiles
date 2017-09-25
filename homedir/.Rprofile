@@ -1,3 +1,5 @@
+options(repos=structure(c(CRAN="http://lib.stat.cmu.edu/R/CRAN/")))
+.libPaths("~/.R/library/")
 
 options(stringsAsFactors=FALSE)
 
@@ -6,7 +8,7 @@ options(max.print=100)
 options(scipen=10)
 
 options(editor="atom")
- 
+
 options(menu.graphics=FALSE)
 
 options(prompt="> ")
