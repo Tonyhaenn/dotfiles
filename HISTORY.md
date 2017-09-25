@@ -2,7 +2,16 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Release History](#release-history)
+- [Release History](#release-history)  
+  - [v4.4.2](#v442)
+  - [v4.4.1](#v441)
+  - [v4.4.0](#v440)
+  - [v4.3.0](#v430)
+  - [v4.2.0](#v420)
+  - [v4.1.1](#v411)
+  - [v4.1.0](#v410)
+  - [v4.0.0](#v400)
+  - [v3.3.2](#v332)
   - [v3.3.1](#v331)
   - [v3.3.0](#v330)
   - [v3.2.1](#v321)
@@ -16,6 +25,63 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Release History
+
+## v4.4.2
+ * add .iterm2_shell_integration.zsh
+
+## v4.4.1
+ * re-enable notification center
+ * fix gitshots optional ability by renaming post-commit -> gitshot-pc
+
+## v4.4.0
+ * cleanup readme and alphabetize software installation for better fork management and listing
+ * disable vim YouCompleteMe Bundle (wasn't using it anyway and was causing installation problems on some machines)
+ * remove yo, generator-dockerize, box-sync from software installs
+ * install node stable (rather than old 4.x.x version)
+ * make gitshots optional (and only install `imagesnap` and `imagemagick` if this is on)
+ * fix passwordless sudo for Sierra (optional)
+ * prompt to overwrite /etc/hosts with someonewhocares.org hosts file (saved in ./configs/hosts in this project)
+ * fix default wallpaper in Sierra (Sierra 2)
+ * remove sudden motion disable (already disabled: https://github.com/mathiasbynens/dotfiles/pull/755/files)
+ * no longer setting hibernation mode to 0 (leaving default 3): https://github.com/mathiasbynens/dotfiles/commit/a3f91f67e07b6b31760b52320e0e890f93ff4e97#commitcomment-20715991
+
+## v4.3.0
+ * vim installation fix
+ * Enable firewall
+ * Enable firewall stealth mode (no response to ICMP / ping requests)
+ * Disable remote apple events
+ * Disable wake-on modem
+ * Disable wake-on LAN
+ * Disable file-sharing via AFP or SMB
+ * Disable guest account login
+ * `pushup` alias (`git-up`, followed by `git push`)
+
+## v4.2.0
+ * new shell functions: `tre` and `sri`
+ * cleanup shell functions (remove unused echo helpers)
+
+## v4.1.1
+ * fix `solarized dark` again for mocha test output coloring
+
+## v4.1.0
+ * remove `to.dir` commands (never use them)
+ * add aliases: `emptytrash`, `ips`, `iplocal`, `ip`, `ifactive`, `spoton`, `spotoff`, `afk`, `reload`, `path`
+
+## v4.0.0
+ * OSX references to MacOS (includes Sierra)
+ * remove aliases to things that are no longer useful (`usenode`, `useio`)
+ * adding `bpc` alias for a `buzzphrase` git commit + push (don't use this on shared code)
+ * `update` alias for updating all software
+ * comment out GO path in `.shellpaths` (was causing slowness on machines with no go path)
+ * comment out all tool shellpaths (enable them at will)
+ * adding iTerm2 shell integration source
+ * `weather $city` shellfn
+ * cask install `little-snitch` and `micro-snitch`
+
+## v3.3.2
+ * `curltime` shell function
+ * Mac Sierra fixes for key repeat
+ * Mac Sierra wallpaper
 
 ## v3.3.1
  * fix restore
