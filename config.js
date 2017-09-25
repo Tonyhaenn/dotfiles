@@ -65,6 +65,7 @@ module.exports = {
     //'evernote',
     //'gpgtools',
     //'ireadfast',
+    'istat-menus',
     'iterm2',
     'java',
     //'macvim',
