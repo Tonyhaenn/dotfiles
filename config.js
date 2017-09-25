@@ -62,6 +62,7 @@ module.exports = {
     //'diffmerge',
     'dbeaver-community',
     'dropbox',
+    'flux',
     //'evernote',
     //'gpgtools',
     //'ireadfast',
