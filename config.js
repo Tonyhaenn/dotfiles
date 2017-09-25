@@ -13,10 +13,10 @@ module.exports = {
     //'gawk',
     // http://www.lcdf.org/gifsicle/ (because I'm a gif junky)
     //'gifsicle',
-    'gnupg',
+    //'gnupg',
     // Install GNU `sed`, overwriting the built-in `sed`
     // so we can do "sed -i 's/foo/bar/' file" instead of "sed -i '' 's/foo/bar/' file"
-    'gnu-sed --default-names',
+    //'gnu-sed --default-names',
     // better, more recent grep
     //'homebrew/dupes/grep',
     // https://github.com/jkbrzt/httpie
@@ -29,22 +29,27 @@ module.exports = {
     //'moreutils',
     //'nmap',
     //'openconnect',
-    'reattach-to-user-namespace',
+    //'reattach-to-user-namespace',
     // better/more recent version of screen
     //'homebrew/dupes/screen',
-    'tmux',
-    'tree',
+    //'tmux',
+    //'tree',
     //'ttyrec',
     // better, more recent vim
-    'vim --override-system-vi',
+    //'vim --override-system-vi',
     //'watch',
     // Install wget with IRI support
     'wget --enable-iri',
     // Additional packages
-    'docker',
-    'docker-compose',
-    'docker-machine',
-    'git'
+    //'docker',
+    //'docker-compose',
+    //'docker-machine',
+    'git',
+    'r --with-java',
+    'freetds --with-unixodbc',
+    'unixodbc',
+    'sqlite'
+
   ],
   cask: [
     //'adium',
@@ -53,11 +58,13 @@ module.exports = {
     //'box-sync',
     //'comicbooklover',
     //'diffmerge',
+    'dbeaver-community',
     'dropbox',
     //'evernote',
-    'gpgtools',
+    //'gpgtools',
     //'ireadfast',
     'iterm2',
+    'java',
     //'macvim',
     //'sizeup',
     //'sketchup',
