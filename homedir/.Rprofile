@@ -1,18 +1,16 @@
 options(repos=structure(c(CRAN="http://lib.stat.cmu.edu/R/CRAN/")))
 .libPaths("~/.R/library/")
+R_LIBS="~/.R/library/"
 
 options(stringsAsFactors=FALSE)
-
 options(max.print=100)
-
 options(scipen=10)
-
 options(editor="atom")
-
 options(menu.graphics=FALSE)
-
 options(prompt="> ")
 options(continue="... ")
+options(TZ="America/New_York")
+Sys.setenv(TZ = "America/New_York")
 
 options(width = 80)
 
@@ -65,4 +63,4 @@ attach(.env)
   df
 }
 
-message("n*** Successfully loaded .Rprofile ***n")
+message("*** Successfully loaded .Rprofile ***")

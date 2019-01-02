@@ -58,3 +58,4 @@ unsetDM() {
   unset DOCKER_CERT_PATH
   unset DOCKER_MACHINE_NAME
 }
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
