@@ -5,8 +5,8 @@
 #
 ################################################################################
 
-source ./echos.sh
-source ./require.sh
+source ./lib_sh/echos.sh
+source ./lib_sh/require.sh
 
 bot "Hi! I'm going to install tooling and tweak your system settings. Here I go..."
 
