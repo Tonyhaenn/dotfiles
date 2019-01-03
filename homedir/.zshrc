@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.dotfiles/oh-my-zsh
+export ZSH=~/.oh-my-zsh
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
-POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 export ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
@@ -51,11 +51,3 @@ load-nvmrc
 
 # Customize to your needs...
 unsetopt correct
-
-unsetDM() {
-  unset DOCKER_TLS_VERIFY
-  unset DOCKER_HOST
-  unset DOCKER_CERT_PATH
-  unset DOCKER_MACHINE_NAME
-}
-export PATH="/usr/local/opt/sqlite/bin:$PATH"

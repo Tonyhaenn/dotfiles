@@ -15,24 +15,11 @@ export MYDEVAPPS=/Applications/Dev
 #########################################################################
 # Tool paths
 #########################################################################
-#export CLOJURE_HOME=/Applications/Dev/clojure
-#export EC2_HOME=/Applications/Dev/ec2-api-tools-1.3-46266
 #export JAVA_HOME=/Library/Java/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/bin
-#export GOPATH=/usr/local/bin
-#export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 #########################################################################
 # Tool settings
 #########################################################################
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 export NVM_DIR=~/.nvm
-
-#########################################################################
-# Android SDK Support
-#########################################################################
-export ANT_HOME=/usr/local/opt/ant
-export MAVEN_HOME=/usr/local/opt/maven
-export GRADLE_HOME=/usr/local/opt/gradle
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
