@@ -168,29 +168,55 @@ running "node install via nvm"
 nvm install node
 
 ###
-# Homebrew package install
+bot "Homebrew package install"
 ###
+running "Mas CLI install"
 require_brew mas
+running "R install"
 require_brew r '--with-java'
-require_brew unixodbc
+running "Free TDS install"
 require_brew freetds '--with-unix-odbc'
+running "SQLite install"
 require_brew sqlite
 
 ###
-# Homebrew cask installs
+bot "Homebrew cask installs"
 ###
+running "Atom"
 require_cask atom
+running "Datagrip"
 require_cask datagrip
+running "Dropbox"
 require_cask dropbox
+running "Firefox"
 require_cask firefox
+running "flux"
 require_cask flux
+running "istat-menus"
 require_cask istat-menus
+running "iterm2"
 require_cask iterm2
+running "java8"
 require_cask java8
 
+bot "NPM Globals"
 require_npm eslint
 require_npm prettyjson
 require_npm vtop
+
+###
+bot "Mac App Store Installs"
+###
+running "Install Things3"
+mas install 904280696
+running "Install Pixelmator"
+mas install 407963104
+running "Install Slack"
+mas install 803453959
+running "Install Magnet"
+mas install 441258766
+running "Install Wunderlist"
+mas install 410628904
 
 running "cleanup homebrew"
 brew cleanup > /dev/null 2>&1
