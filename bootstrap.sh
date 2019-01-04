@@ -72,6 +72,7 @@ output=$(brew tap | grep cask)
 if [[ $? != 0 ]]; then
   action "installing brew-cask"
   brew tap caskroom/cask
+  brew tap buo/cask-upgrade
 fi
 brew tap caskroom/versions > /dev/null 2>&1
 ok
