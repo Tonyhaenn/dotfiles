@@ -110,9 +110,7 @@ popd > /dev/null 2>&1
 # Setup zsh
 ####
 bot "Setting up basic system: Git, ZSH"
-running "installing Git"
 require_brew git
-running "installing zsh"
 require_brew zsh
 
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
@@ -176,33 +174,22 @@ nvm install node
 ###
 bot "Homebrew cask installs"
 ###
-running "Atom"
 require_cask atom
-running "Datagrip"
+require_cask balsamiq-mockups
 require_cask datagrip
-running "Dropbox"
 require_cask dropbox
-running "Firefox"
 require_cask firefox
-running "flux"
 require_cask flux
-running "istat-menus"
 require_cask istat-menus
-running "iterm2"
 require_cask iterm2
-running "java8"
 require_cask java8
 
 ###
 bot "Homebrew package install"
 ###
-running "Mas CLI install"
 require_brew mas
-running "R install"
 require_brew r '--with-java'
-running "Free TDS install"
 require_brew freetds '--with-unix-odbc'
-running "SQLite install"
 require_brew sqlite
 
 
