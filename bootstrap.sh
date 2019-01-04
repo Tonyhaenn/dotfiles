@@ -5,8 +5,8 @@
 #
 ################################################################################
 
-source ./echos.sh
-source ./require.sh
+source ./lib_sh/echos.sh
+source ./lib_sh/require.sh
 
 bot "Hi! I'm going to install tooling and tweak your system settings. Here I go..."
 
@@ -99,7 +99,7 @@ for file in .*; do
   # symlink might still exist
   unlink ~/$file > /dev/null 2>&1
   # create the link
-  ln -s ~/.dotfiles/homedir/$file ~/$file
+  ln -s ~/dotfiles/homedir/$file ~/$file
   echo -en '\tlinked';ok
 done
 
@@ -128,21 +128,22 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ###
 # Install powerline fonts
 ###
-# None of this may be necessary given below cask font install
-#bot "Installing powerline fonts"
-#running "Clone powerline repo"
-#git clone https://github.com/powerline/fonts.git --depth=1
+bot "Checking for powerline fonts"
+if [ ! -d "fonts" ]; then
+bot "Installing powerline fonts"
+running "Clone powerline repo"
+git clone https://github.com/powerline/fonts.git --depth=1
 # install
-#cd fonts
-#running "Running font install script"
-#./fonts/install.sh
+running "Running font install script"
+./fonts/install.sh
+fi
 
 running "Installing fonts from cask"
 brew tap caskroom/fonts
 require_cask font-fontawesome
 require_cask font-awesome-terminal-fonts
 require_cask font-hack
-require_cask font-hack-nerd
+require_cask font-hack-nerd-font
 require_cask font-inconsolata-dz-for-powerline
 require_cask font-inconsolata-g-for-powerline
 require_cask font-inconsolata-for-powerline
@@ -155,29 +156,20 @@ ok
 # Setup theme
 ###
 bot "Installing powerlevel9k ZSH theme"
-brew tap sambadevi/powerlevel9k
-brew install powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 ####
 # Install NVM
 ####
 bot "Setting up NVM + Node"
-running "nvm install"
+running "Checking NVM install"
+nvm_bin=$(which nvm) 2>&1 > /dev/null
+if [[ $? != 0 ]]; then
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+fi
+source ~/.profile
 running "node install via nvm"
 nvm install node
-
-###
-bot "Homebrew package install"
-###
-running "Mas CLI install"
-require_brew mas
-running "R install"
-require_brew r '--with-java'
-running "Free TDS install"
-require_brew freetds '--with-unix-odbc'
-running "SQLite install"
-require_brew sqlite
 
 ###
 bot "Homebrew cask installs"
@@ -198,6 +190,19 @@ running "iterm2"
 require_cask iterm2
 running "java8"
 require_cask java8
+
+###
+bot "Homebrew package install"
+###
+running "Mas CLI install"
+require_brew mas
+running "R install"
+require_brew r '--with-java'
+running "Free TDS install"
+require_brew freetds '--with-unix-odbc'
+running "SQLite install"
+require_brew sqlite
+
 
 bot "NPM Globals"
 require_npm eslint
@@ -229,7 +234,7 @@ bot "Installing Miniconda + base packages"
 conda_bin=$(which conda) 2>&1 > /dev/null
 if [[ $? != 0 ]]; then
   mkdir ./tmp
-  curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ./miniconda3.sh
+  curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh >> ./miniconda3.sh
   sh ./miniconda3.sh -b -p $HOME/miniconda
   rm miniconda3.sh
 fi
@@ -332,7 +337,7 @@ running "Show scrollbars when scrolling"
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling";ok
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
-unning "Increase window resize speed for Cocoa applications"
+running "Increase window resize speed for Cocoa applications"
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001;ok
 
 running "Expand save panel by default"
@@ -703,10 +708,10 @@ bot "Terminal & iTerm2"
 # i.e. hover over a window and start `typing in it without clicking first
 defaults write com.apple.terminal FocusFollowsMouse -bool true
 #defaults write org.x.X11 wm_ffm -bool true;ok
-running "Installing the Solarized Light theme for iTerm (opening file)"
-open "./configs/Solarized Light.itermcolors";ok
-running "Installing the Patched Solarized Dark theme for iTerm (opening file)"
-open "./configs/Solarized Dark Patch.itermcolors";ok
+#running "Installing the Solarized Light theme for iTerm (opening file)"
+#open "./configs/Solarized Light.itermcolors";ok
+#running "Installing the Patched Solarized Dark theme for iTerm (opening file)"
+#open "./configs/Solarized Dark Patch.itermcolors";ok
 
 running "Don’t display the annoying prompt when quitting iTerm"
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false;ok
@@ -722,11 +727,6 @@ defaults write com.googlecode.iterm2 HotkeyChar -int 96;
 defaults write com.googlecode.iterm2 HotkeyCode -int 50;
 defaults write com.googlecode.iterm2 FocusFollowsMouse -int 1;
 defaults write com.googlecode.iterm2 HotkeyModifiers -int 262401;
-running "Make iTerm2 load new tabs in the same directory"
-/usr/libexec/PlistBuddy -c "set \"New Bookmarks\":0:\"Custom Directory\" Recycle" ~/Library/Preferences/com.googlecode.iterm2.plist
-running "setting fonts"
-defaults write com.googlecode.iterm2 "Normal Font" -string "Hack-Regular 12";
-defaults write com.googlecode.iterm2 "Non Ascii Font" -string "RobotoMonoForPowerline-Regular 12";
 ok
 running "reading iterm settings"
 defaults read -app iTerm > /dev/null 2>&1;

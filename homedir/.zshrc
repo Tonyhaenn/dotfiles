@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=~/.oh-my-zsh
+
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 POWERLEVEL9K_MODE='nerdfont-complete'
 export ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -35,8 +36,6 @@ plugins=(colorize compleat dirpersist autojump git gulp history cp)
 source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-source /usr/local/opt/nvm/nvm.sh
 
 autoload -U add-zsh-hook
 load-nvmrc() {

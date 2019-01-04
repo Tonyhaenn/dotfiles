@@ -1,12 +1,6 @@
 #########################################
 # Utility Functions
 
-function bot() {
-  ESC_SEQ="\x1b["
-  echo
-  echo -e "$ESC_SEQ"32;01m\[._.]/$ESC_SEQ"39;49;00m - "$1
-}
-
 # Create a new git repo with one README commit and CD into it
 function gitnr() { mkdir $1; cd $1; git init; touch README; git add README; git commit -mFirst-commit;}
 
