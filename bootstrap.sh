@@ -261,9 +261,6 @@ sudo systemsetup -setwakeonnetworkaccess off
 # Disable guest account login
 sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
 
-# Automatically lock the login keychain for inactivity after 6 hours
-security set-keychain-settings -t 21600 -l ~/Library/Keychains/login.keychain
-
 # Destroy FileVault key when going into standby mode, forcing a re-auth.
 # Source: https://web.archive.org/web/20160114141929/http://training.apple.com/pdf/WP_FileVault2.pdf
 sudo pmset destroyfvkeyonstandby 1
@@ -373,10 +370,6 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true;ok
 
 running "Disable press-and-hold for keys in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false;ok
-
-running "Set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 10
-defaults write NSGlobalDomain InitialKeyRepeat -int 10;ok
 
 running "Set language and text formats (english/US)"
 defaults write NSGlobalDomain AppleLanguages -array "en"
