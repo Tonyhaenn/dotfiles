@@ -158,7 +158,6 @@ bot "Homebrew cask installs"
 ###
 require_cask atom
 require_cask balsamiq-mockups
-require_cask datagrip
 require_cask dropbox
 require_cask firefox
 require_cask flux
@@ -193,6 +192,8 @@ running "Install Magnet"
 mas install 441258766
 running "Install Wunderlist"
 mas install 410628904
+running "Installing Ghostery Lite"
+mas install 1436953057
 
 running "cleanup homebrew"
 brew cleanup > /dev/null 2>&1
